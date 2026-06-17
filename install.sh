@@ -2,7 +2,7 @@
 set -eu
 
 # Replace with your GitHub username/org and repository name.
-REPO="goodmorningkay/jot"
+REPO="YOUR_GITHUB_USER/noted"
 INSTALL_DIR="${INSTALL_DIR:-$HOME/.local/bin}"
 
 main() {
@@ -23,12 +23,12 @@ main() {
     esac
 
     if [ "$os" = "windows" ]; then
-        binary="jot.exe"
+        binary="noted.exe"
     else
-        binary="jot"
+        binary="noted"
     fi
 
-    asset="jot-${os}-${arch}.tar.gz"
+    asset="noted-${os}-${arch}.tar.gz"
     url="https://github.com/${REPO}/releases/latest/download/${asset}"
 
     tmpdir=$(mktemp -d)

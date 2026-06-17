@@ -219,14 +219,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a6cb138bb79a146c1bd460005623e142ef0181e3d0219cb493e02f7d08a35695"
 
 [[package]]
-name = "jot"
-version = "0.1.0"
-dependencies = [
- "chrono",
- "clap",
-]
-
-[[package]]
 name = "js-sys"
 version = "0.3.102"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -248,6 +240,14 @@ name = "log"
 version = "0.4.32"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "953f07c43838f8e6f9758cab68bf5bed85465e7587ebe0b823f1bcd81978ad3a"
+
+[[package]]
+name = "noted"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "clap",
+]
 
 [[package]]
 name = "num-traits"

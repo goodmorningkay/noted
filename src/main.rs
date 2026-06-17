@@ -7,7 +7,7 @@ use std::path::{Path, PathBuf};
 use std::process::Command;
 
 #[derive(Parser)]
-#[command(name = "jot", about = "Timestamped notes CLI")]
+#[command(name = "noted", about = "Timestamped notes CLI")]
 struct Cli {
     message: Option<String>,
 
@@ -38,9 +38,9 @@ fn notes_dir() -> PathBuf {
         .or_else(|_| env::var("USERPROFILE"))
         .map(PathBuf::from)
         .unwrap_or_else(|_| PathBuf::from("."));
-    env::var("JOT_DIR")
+    env::var("NOTED_DIR")
         .map(PathBuf::from)
-        .unwrap_or_else(|_| home.join(".jot"))
+        .unwrap_or_else(|_| home.join(".noted"))
 }
 
 fn day_file(date: NaiveDate) -> PathBuf {
@@ -212,7 +212,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     if let Some(message) = message {
         let date = cli.date.map(|s| parse_date(&s)).transpose()?;
         let path = add_entry(&message, date)?;
-        println!("jotted: {}", path.display());
+        println!("noted: {}", path.display());
         return Ok(());
     }
 
@@ -247,7 +247,7 @@ mod tests {
 
     #[test]
     fn format_entry_shows_date_and_line() {
-        let path = PathBuf::from("/home/user/.jot/2026-06-16.md");
+        let path = PathBuf::from("/home/user/.noted/2026-06-16.md");
         assert_eq!(
             format_entry(&path, "10:30 fixed nginx"),
             "2026-06-16 10:30 fixed nginx"

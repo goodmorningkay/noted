@@ -15,20 +15,20 @@ jobs:
         include:
           - os: ubuntu-latest
             target: x86_64-unknown-linux-gnu
-            asset: jot-linux-amd64.tar.gz
-            binary: jot
+            asset: noted-linux-amd64.tar.gz
+            binary: noted
           - os: macos-latest
             target: aarch64-apple-darwin
-            asset: jot-macos-arm64.tar.gz
-            binary: jot
+            asset: noted-macos-arm64.tar.gz
+            binary: noted
           - os: macos-latest
             target: x86_64-apple-darwin
-            asset: jot-macos-amd64.tar.gz
-            binary: jot
+            asset: noted-macos-amd64.tar.gz
+            binary: noted
           - os: windows-latest
             target: x86_64-pc-windows-msvc
-            asset: jot-windows-amd64.tar.gz
-            binary: jot.exe
+            asset: noted-windows-amd64.tar.gz
+            binary: noted.exe
 
     runs-on: ${{ matrix.os }}
     steps:

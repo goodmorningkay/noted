@@ -2,7 +2,7 @@
 set -eu
 
 # Replace with your GitHub username/org and repository name.
-REPO="YOUR_GITHUB_USER/noted"
+REPO="goodmorningkay/noted"
 INSTALL_DIR="${INSTALL_DIR:-$HOME/.local/bin}"
 
 main() {
